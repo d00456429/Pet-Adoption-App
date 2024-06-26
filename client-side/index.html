@@ -16,10 +16,17 @@
       </nav>
       <br />
       <div class="page" v-if="page === 1">
-        PetPage 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Animi illo nemo nihil laudantium tempore doloremque ipsa at quod
-        recusandae amet fuga ut odit, quibusdam sequi placeat magni a eligendi
-        minima.
+        <input type="text" placeholder="search pet breed, name, or species" />
+        <button>Add pet</button>
+        <div id="pet-list" v-for="(pet, index) in pets">
+          <h3>Name: {{pet.name}}</h3>
+          <p>Species: {{pet.species}}</p>
+          <p>Breed: {{pet.breed}}</p>
+          <p>Age: {{pet.age}}</p>
+          <p>Gender: {{pet.gender}}</p>
+          <button>Apply</button>
+          <button>X</button>
+        </div>
       </div>
 
       <div class="page" v-if="page === 2">
