@@ -4,9 +4,22 @@ Vue.createApp({
 	data() {
 		return {
 			page: 1,
-			applications: [],
+			applications: [
+				{
+					name: "alec",
+					phoneNum: "123456789",
+					email: "searle.alec@gmail.com",
+					petId: "abc123",
+				},
+				{
+					name: "saul",
+					phoneNum: "00000000",
+					email: "saul@gmail.com",
+					petId: "123abc",
+				},
+			],
 			pets: [],
-			petId: {
+			newPet: {
 				name: "",
 				species: "",
 				breed: "",
