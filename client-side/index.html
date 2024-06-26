@@ -26,7 +26,7 @@
 					type="text"
 					placeholder="search pet breed, name, or species"
 					v-model="searchInput" />
-				<button>Add pet</button>
+				<button @click="createListing()">Add pet</button>
 				<div
 					id="pet-list"
 					v-for="(pet, index) in pets">
@@ -35,7 +35,7 @@
 					<p>Breed: {{pet.breed}}</p>
 					<p>Age: {{pet.age}}</p>
 					<p>Gender: {{pet.gender}}</p>
-					<button @click="createApplication()">Apply</button>
+					<button @click="setPage(3)">Apply</button>
 					<button @click="deleteListing">X</button>
 				</div>
 			</div>
@@ -54,6 +54,35 @@
 					<p>Email: {{application.email}}</p>
 					<p>petID: {{application.petId}}</p>
 				</div>
+			</div>
+
+			<div
+				class="page"
+				v-if="page === 3">
+				<h1>Submit Application</h1>
+				<form @submit.prevent="createApplication()">
+					<span>Name</span>
+					<input
+						type="text"
+						placeholder="Name"
+						v-model="newApplication.name" />
+					<span>Phone Number</span>
+					<input
+						type="text"
+						placeholder="Phone Number"
+						v-model="newApplication.phoneNum" />
+					<span>Email</span>
+					<input
+						type="text"
+						placeholder="Email"
+						v-model="newApplication.email" />
+					<span>PetID</span>
+					<input
+						type="text"
+						placeholder="PetID"
+						v-model="newApplication.petId" />
+					<button @click="createApplication()">Apply</button>
+				</form>
 			</div>
 		</div>
 		<script src="app.js"></script>

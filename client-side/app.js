@@ -118,7 +118,17 @@ Vue.createApp({
 			console.log(data);
 		},
 
-		createApplication: async function () {
+		createApplication: function () {
+			let newApp = {
+				name: this.name,
+				phoneNum: this.phoneNum,
+				email: this.email,
+				petId: this.petId,
+			};
+			this.applications.push(newApp);
+		},
+
+		createapplication: async function () {
 			let myHeaders = new Headers();
 			myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
