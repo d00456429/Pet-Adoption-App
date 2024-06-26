@@ -16,16 +16,20 @@
       </nav>
       <br />
       <div class="page" v-if="page === 1">
-        <input type="text" placeholder="search pet breed, name, or species" />
+        <input
+          type="text"
+          placeholder="search pet breed, name, or species"
+          v-model="searchInput"
+        />
         <button>Add pet</button>
-        <div id="pet-list" v-for="(pet, index) in pets">
+        <div id="pet-list" v-for="(pet, index) in listings">
           <h3>Name: {{pet.name}}</h3>
           <p>Species: {{pet.species}}</p>
           <p>Breed: {{pet.breed}}</p>
           <p>Age: {{pet.age}}</p>
           <p>Gender: {{pet.gender}}</p>
-          <button>Apply</button>
-          <button>X</button>
+          <button @click="createApplication()">Apply</button>
+          <button @click="deleteListing">X</button>
         </div>
       </div>
 

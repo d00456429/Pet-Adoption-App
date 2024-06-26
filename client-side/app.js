@@ -4,6 +4,7 @@ Vue.createApp({
   data() {
     return {
       page: 1,
+      searchInput: "",
       applications: [
         {
           name: "alec",
@@ -18,7 +19,7 @@ Vue.createApp({
           petId: "123abc",
         },
       ],
-      pets: [
+      listings: [
         {
           name: "Arma",
           species: "Armadillo",
@@ -34,7 +35,7 @@ Vue.createApp({
           gender: "Male",
         },
       ],
-      newPet: {
+      newListing: {
         name: "",
         species: "",
         breed: "",
@@ -60,7 +61,18 @@ Vue.createApp({
     createApplication: function () {},
     changePage: function (page) {},
   },
+  computed: {
+    filteredListings: function () {
+      return this.listings.filter((listing) => {
+        return (
+          "breed" in listing &&
+          listing.breed.toLowerCase().includes(this.searchInput.toLowerCase())
+        );
+      });
+    },
+  },
   created: function () {
     console.log("Created");
   },
 }).mount("#app");
+//pet breed name or species
