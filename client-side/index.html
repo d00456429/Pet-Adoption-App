@@ -10,6 +10,24 @@
   <body>
     <div id="app">
       <h1>Pet Adoption App</h1>
+      <nav>
+        <div @click="setPage(1)">Pets</div>
+        <div @click="setPage(2)">Applications</div>
+      </nav>
+      <br />
+      <div class="page" v-if="page === 1">
+        PetPage 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Animi illo nemo nihil laudantium tempore doloremque ipsa at quod
+        recusandae amet fuga ut odit, quibusdam sequi placeat magni a eligendi
+        minima.
+      </div>
+
+      <div class="page" v-if="page === 2">
+        ApplicationPage 2 Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Sint labore delectus quidem. Vitae vel pariatur odit quos magnam,
+        nostrum laborum dolorem optio quia, tempore temporibus recusandae
+        tempora accusantium dolores rerum!
+      </div>
     </div>
     <script src="app.js"></script>
   </body>
