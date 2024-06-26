@@ -30,10 +30,15 @@
       </div>
 
       <div class="page" v-if="page === 2">
-        ApplicationPage 2 Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Sint labore delectus quidem. Vitae vel pariatur odit quos magnam,
-        nostrum laborum dolorem optio quia, tempore temporibus recusandae
-        tempora accusantium dolores rerum!
+        <header>
+          <h3>Applications</h3>
+        </header>
+        <div id="applications" v-for="(application, index) in applications">
+          <h3>Name: {{application.name}}</h3>
+          <p>Phone Number: {{application.phoneNum}}</p>
+          <p>Email: {{application.email}}</p>
+          <p>petID: {{application.petId}}</p>
+        </div>
       </div>
     </div>
     <script src="app.js"></script>
